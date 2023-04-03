@@ -25,6 +25,7 @@ const navigate=useNavigate()
   return (
     <>
       <div className="mx-auto">
+      <div className="column">
         <form onSubmit={handleSubmit}>
           <div class="mb-3 w-50">
             <label for="exampleInputPassword1" class="form-label">
@@ -80,6 +81,7 @@ const navigate=useNavigate()
             Submit
           </button>
         </form>
+      </div>
       </div>
     </>
   );

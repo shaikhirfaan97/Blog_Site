@@ -26,7 +26,8 @@ const Login = () => {
   };
   return (
     <>
-      <div className="mx-auto">
+      <div className="row">
+      <div className="row">
         <form onSubmit={HandleLogin}>
           <div class="mb-3 w-50">
             <label for="exampleInputEmail1" class="form-label">
@@ -67,6 +68,7 @@ const Login = () => {
             Submit
           </button>
         </form>
+      </div>
       </div>
     </>
   );
