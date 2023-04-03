@@ -10,7 +10,7 @@ exports.userRegistration = async (req, res) => {
       if (!isUser) {
         //*Hash Password
         const genSalt = await bcrypt.genSalt(10);
-        
+
         const hashPassword = await bcrypt.hash(password, genSalt);
 
         const newUser = new User({
@@ -51,7 +51,11 @@ exports.userLogin = async (req, res) => {
 
           return res
             .status(200)
-            .json({ message: "Login Successful", token, username: isEmail.username });
+            .json({
+              message: "Login Successful",
+              token,
+              username: isEmail.username,
+            });
         } else {
           return res.status(403).json({ message: "invalid Credentials" });
         }

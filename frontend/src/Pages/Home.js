@@ -28,12 +28,14 @@ const Home = () => {
                 blogs.map((item) => {
                   return (
                     <div class="card" style={{ width: "18rem" }}>
-                      <img src={`http://localhost:9000/${item.thumbnail}`} class="card-img-top" alt="..." />
+                      <img
+                        src={`http://localhost:9000/${item.thumbnail}`}
+                        class="card-img-top"
+                        alt="..."
+                      />
                       <div class="card-body">
                         <h5 class="card-title">{item.title}</h5>
-                        <p class="card-text">
-                        {item.description}
-                        </p>
+                        <p class="card-text">{item.description}</p>
                         <Link to={`/blog/${item._id}`} class="btn btn-primary">
                           Read More
                         </Link>

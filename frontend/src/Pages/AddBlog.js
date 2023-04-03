@@ -11,7 +11,7 @@ const AddBlog = () => {
   const [file, setFile] = useState([]);
   const [selectCategory, setSelectCategory] = useState([]);
   console.log(selectCategory);
-  
+
   useEffect(() => {
     const fetchAllCategories = async () => {
       try {

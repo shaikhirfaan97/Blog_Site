@@ -2,14 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Header = () => {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const username = localStorage.getItem("username");
-  console.log(username)
+  console.log(username);
   const HandleLogout = async () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
-    navigate("/login")
+    navigate("/login");
   };
 
   return (
@@ -57,10 +57,9 @@ const Header = () => {
               </li>
             </ul>
             <div className="div-inline mx-auto my-2 my-lg-0">
-              {token && token ===! null ?
-              (
+              {token && token === !null ? (
                 <>
-                <button class="btn btn-sm btn-outline-secondary">
+                  <button class="btn btn-sm btn-outline-secondary">
                     Welcome:{username}
                   </button>
                   <button
@@ -70,24 +69,26 @@ const Header = () => {
                     Logout
                   </button>
                 </>
-              ):(<>
-                <Link to={"/login"}>
-                  <button
-                    class="btn btn-sm btn-outline-secondary"
-                    type="button"
-                  >
-                    Login
-                  </button>
-                </Link>
-                <Link to={"/register"}>
-                  <button
-                    class="btn btn-sm btn-outline-secondary"
-                    type="button"
-                  >
-                    Register
-                  </button>
-                </Link>
-              </>)}
+              ) : (
+                <>
+                  <Link to={"/login"}>
+                    <button
+                      class="btn btn-sm btn-outline-secondary"
+                      type="button"
+                    >
+                      Login
+                    </button>
+                  </Link>
+                  <Link to={"/register"}>
+                    <button
+                      class="btn btn-sm btn-outline-secondary"
+                      type="button"
+                    >
+                      Register
+                    </button>
+                  </Link>
+                </>
+              )}
               {/* {token && token ===! null ? 
               (
                 <>

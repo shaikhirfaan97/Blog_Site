@@ -15,9 +15,7 @@ exports.addNewCategories = async (req, res) => {
       const newCategories = new category({ title });
       const savedCategories = newCategories.save();
       if (savedCategories) {
-        return res
-          .status(200)
-          .json({  title });
+        return res.status(200).json({ title });
       }
     }
   } catch (error) {

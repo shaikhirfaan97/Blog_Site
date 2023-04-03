@@ -2,7 +2,7 @@ const blog = require("../Model/blogModel");
 
 exports.getAllBlog = async (req, res) => {
   try {
-    const fetchAllBlog = await blog.find({user:req.user._id});
+    const fetchAllBlog = await blog.find({ user: req.user._id });
     return res.status(200).json(fetchAllBlog);
   } catch (error) {
     return res.status(404).json({ message: error.message });
@@ -26,7 +26,9 @@ exports.addBlog = async (req, res) => {
       if (savedBlog) {
         const data = [];
         data.push(savedBlog);
-        return res.status(200).json({ message: "Blog Saved Successfully", data });
+        return res
+          .status(200)
+          .json({ message: "Blog Saved Successfully", data });
       }
     } else {
       return res.status(404).json({ message: "All fields are required" });
