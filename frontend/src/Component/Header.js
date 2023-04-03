@@ -5,6 +5,7 @@ const Header = () => {
     const navigate=useNavigate()
   const token = localStorage.getItem("token");
   const username = localStorage.getItem("username");
+  console.log(username)
   const HandleLogout = async () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
@@ -56,7 +57,39 @@ const Header = () => {
               </li>
             </ul>
             <div className="div-inline mx-auto my-2 my-lg-0">
-              {token && token ===! null ? (
+              {token && token ===! null ?
+              (
+                <>
+                <button class="btn btn-sm btn-outline-secondary">
+                    Welcome:{username}
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-secondary"
+                    onClick={HandleLogout}
+                  >
+                    Logout
+                  </button>
+                </>
+              ):(<>
+                <Link to={"/login"}>
+                  <button
+                    class="btn btn-sm btn-outline-secondary"
+                    type="button"
+                  >
+                    Login
+                  </button>
+                </Link>
+                <Link to={"/register"}>
+                  <button
+                    class="btn btn-sm btn-outline-secondary"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </Link>
+              </>)}
+              {/* {token && token ===! null ? 
+              (
                 <>
                   <button class="btn btn-sm btn-outline-secondary">
                     Welcome:{username}
@@ -87,7 +120,7 @@ const Header = () => {
                     </button>
                   </Link>
                 </>
-              )}
+              )} */}
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ const category = require("../Model/categoryModel");
 exports.getAllCategories = async (req, res) => {
   try {
     const getAllCategories = await category.find({});
-    return res.status(200).json({ getAllCategories });
+    return res.status(200).json(getAllCategories);
   } catch (error) {
     return res.status(404).json({ message: error.message });
   }

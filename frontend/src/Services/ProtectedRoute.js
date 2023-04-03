@@ -1,8 +1,8 @@
 import React from 'react'
 import { Navigate,Outlet } from 'react-router-dom'
-const ProtectedRoute = () => {
+const PrivateRoute = () => {
   const auth=localStorage.getItem("token")
   return auth && auth ===! null ? <Outlet/> : <Navigate to="/login"/>;
 }
 
-export default ProtectedRoute
+export default PrivateRoute

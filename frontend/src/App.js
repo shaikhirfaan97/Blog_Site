@@ -7,7 +7,7 @@ import Header from "./Component/Header";
 import AddBlog from "./Pages/AddBlog";
 import AddCategory from "./Pages/AddCategory";
 import Singleblog from "./Pages/Singleblog";
-// import ProtectedRoute from "./Services/ProtectedRoute"
+import PrivateRoute from "./Services/ProtectedRoute";
 const App = () => {
   return (
     <>
@@ -15,13 +15,14 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
         {/* //Protect Route */}
-        {/* <Route path="/" element={<ProtectedRoute />}> */}
+        <Route path="/" element={<PrivateRoute />}>
           <Route path="/" element={<Home />} />
           <Route path="/add-blog" element={<AddBlog />} />
           <Route path="/add-category" element={<AddCategory />} />
           <Route path="/blog/:id" element={<Singleblog />} />
-        {/* </Route> */}
+        </Route>
       </Routes>
     </>
   );
