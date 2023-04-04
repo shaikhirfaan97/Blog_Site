@@ -14,13 +14,13 @@ const Header = () => {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <Link class="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/">
             Techno Blog
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -28,27 +28,27 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <Link class="nav-link active" aria-current="page" to="/">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
-                  class="nav-link active"
+                  className="nav-link active"
                   aria-current="page"
                   to="/add-blog"
                 >
                   Add Blog
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
-                  class="nav-link active"
+                  className="nav-link active"
                   aria-current="page"
                   to="/add-category"
                 >
@@ -57,13 +57,13 @@ const Header = () => {
               </li>
             </ul>
             <div className="div-inline mx-auto my-2 my-lg-0">
-              {token && token === !null ? (
+              {token && token !== null ? (
                 <>
-                  <button class="btn btn-sm btn-outline-secondary">
+                  <button className="btn btn-sm btn-outline-secondary">
                     Welcome:{username}
                   </button>
                   <button
-                    class="btn btn-sm btn-outline-secondary"
+                    className="btn btn-sm btn-outline-secondary"
                     onClick={HandleLogout}
                   >
                     Logout
@@ -73,7 +73,7 @@ const Header = () => {
                 <>
                   <Link to={"/login"}>
                     <button
-                      class="btn btn-sm btn-outline-secondary"
+                      className="btn btn-sm btn-outline-secondary"
                       type="button"
                     >
                       Login
@@ -81,7 +81,7 @@ const Header = () => {
                   </Link>
                   <Link to={"/register"}>
                     <button
-                      class="btn btn-sm btn-outline-secondary"
+                      className="btn btn-sm btn-outline-secondary"
                       type="button"
                     >
                       Register
@@ -89,39 +89,7 @@ const Header = () => {
                   </Link>
                 </>
               )}
-              {/* {token && token ===! null ? 
-              (
-                <>
-                  <button class="btn btn-sm btn-outline-secondary">
-                    Welcome:{username}
-                  </button>
-                  <button
-                    class="btn btn-sm btn-outline-secondary"
-                    onClick={HandleLogout}
-                  >
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link to={"/login"}>
-                    <button
-                      class="btn btn-sm btn-outline-secondary"
-                      type="button"
-                    >
-                      Login
-                    </button>
-                  </Link>
-                  <Link to={"/register"}>
-                    <button
-                      class="btn btn-sm btn-outline-secondary"
-                      type="button"
-                    >
-                      Register
-                    </button>
-                  </Link>
-                </>
-              )} */}
+              
             </div>
           </div>
         </div>

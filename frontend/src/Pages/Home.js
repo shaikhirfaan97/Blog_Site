@@ -23,20 +23,20 @@ const Home = () => {
             <h2 className="mb-5 my-3">
               <strong>Latest Blog</strong>
             </h2>
-            <div className="row">
+            <div className="column">
               {blogs && blogs.length > 0 ? (
                 blogs.map((item) => {
                   return (
-                    <div class="card" style={{ width: "18rem" }}>
+                    <div key={item._id} className="card" style={{ width: "18rem" }}>
                       <img
                         src={`http://localhost:9000/${item.thumbnail}`}
-                        class="card-img-top"
+                        className="card-img-top"
                         alt="..."
                       />
-                      <div class="card-body">
-                        <h5 class="card-title">{item.title}</h5>
-                        <p class="card-text">{item.description}</p>
-                        <Link to={`/blog/${item._id}`} class="btn btn-primary">
+                      <div className="card-body">
+                        <h5 className="card-title">{item.title}</h5>
+                        <p className="card-text">{item.description}</p>
+                        <Link to={`/blog/${item._id}`} className="btn btn-primary">
                           Read More
                         </Link>
                       </div>

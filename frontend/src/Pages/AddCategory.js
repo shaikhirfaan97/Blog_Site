@@ -35,13 +35,13 @@ const AddCategory = () => {
         <div className="col-xl-12 my-3 d-flex items-center justify-content-center">
           <div className="column">
             <form onSubmit={handleCategory}>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
+              <div className="mb-3">
+                <label for="exampleInputPassword1" className="form-label">
                   Category
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   value={input.title}
                   onChange={(e) => {
                     console.log(e.target.name, e.target.value);
@@ -51,7 +51,7 @@ const AddCategory = () => {
                   id="exampleInputPassword1"
                 />
 
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" className="btn btn-primary">
                   Add Category
                 </button>
               </div>
