@@ -6,7 +6,8 @@ const Home = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     const fetchallBlogs = async () => {
-      const res = await axios.get("http://localhost:9000/api/v1//get/allblog", {
+      const res = await axios.get("http://localhost:9000/api/v1//get/allblog", 
+      {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

@@ -94,7 +94,11 @@ const AddBlog = () => {
                 >
                   <option disabled>select Category</option>
                   {Array.from(selectCategory).map((item) => {
-                    return <option key={item._id} value={item._id}>{item.title}</option>;
+                    return (
+                      <option key={item._id} value={item._id}>
+                        {item.title}
+                      </option>
+                    );
                   })}
                 </select>
               </div>
