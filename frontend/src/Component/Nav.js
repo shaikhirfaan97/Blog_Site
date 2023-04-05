@@ -3,46 +3,40 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
   const username = localStorage.getItem("username");
+
   const HandleLogout = async () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
-    navigate("/login");
+    navigate("/common");
   };
+
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i class="fas fa-bars"></i>
+            <span className="navbar-toggler-icon"></span>
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
-             <h2>Iffu</h2>
-              {/* <img
-                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                height="15"
-                alt="MDB Logo"
-                loading="lazy"
-              /> */}
-            </a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+          <Link className="navbar-brand mt-2 mt-lg-0" to="/">
+            <h2>Iffu</h2>
+          </Link>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   className="nav-link active"
                   aria-current="page"
@@ -51,7 +45,7 @@ const Nav = () => {
                   Add Blog
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   className="nav-link active"
                   aria-current="page"
@@ -61,16 +55,15 @@ const Nav = () => {
                 </Link>
               </li>
             </ul>
+            <div className="d-flex align-items-center">
+              <button className="btn btn-primary me-3">
+                Welcome: {username}
+              </button>
+              <button className="btn btn-primary me-3" onClick={HandleLogout}>
+                Logout
+              </button>
+            </div>
           </div>
-          <button class="btn btn-primary me-3">
-            Welcome:{username}
-          </button>
-          <button
-            class="btn btn-primary me-3"
-            onClick={HandleLogout}
-          >
-            Logout
-          </button>
         </div>
       </nav>
     </>

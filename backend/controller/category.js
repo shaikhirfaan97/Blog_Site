@@ -22,3 +22,15 @@ exports.addNewCategories = async (req, res) => {
     return res.status(404).json({ message: error.message });
   }
 };
+
+exports.deleteCategory = async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id) {
+      const data = await category.findOneAndDelete({ _id: id });
+      return res.status(200).json({ message: "Deleted Successfully...", data });
+    } else {
+      return res.status(404).json({ message: "Invalid Category" });
+    }
+  } catch (error) {}
+};

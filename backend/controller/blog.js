@@ -51,3 +51,34 @@ exports.getBlogById = async (req, res) => {
     return res.status(404).json({ message: error.message });
   }
 };
+
+exports.deleteBlog = async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id) {
+      const fetchBlog = await blog.findOneAndDelete({ _id: id });
+      return res
+        .status(200)
+        .json({ message: "Deleted Successfully...", fetchBlog });
+    } else {
+      return res.status(404).json({ message: "Invalid Id" });
+    }
+  } catch (error) {}
+};
+
+exports.updateBlog = async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id) {
+      const data = await blog.findByIdAndUpdate({ _id: id }, { ...req.body });
+      return res.status(200).json({ message: "Updated Successfully...", data });
+    } else {
+      return res.status(404).json({ message: "Blog Not found" });
+    }
+  } catch (error) {}
+};
+
+exports.getAllUsersBlog = async (req, res) => {
+  const data = await blog.find();
+  return res.status(200).json(data);
+};

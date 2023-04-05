@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const Test4 = () => {
+const SingleBlog = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [blog, setBlog] = useState({});
@@ -30,9 +30,9 @@ const Test4 = () => {
             class="card-img-top w-50 mx-auto"
             alt={blog.title}
           />
-          
+
           <div class="card-body">
-          <hr/>
+            <hr />
             <h5 class="card-title text-center py-4">{blog.title}</h5>
             <p class="card-text text-center py-4">{blog.description}</p>
             <button className="btn btn-primary" onClick={() => navigate("/")}>
@@ -45,4 +45,4 @@ const Test4 = () => {
   );
 };
 
-export default Test4;
+export default SingleBlog;

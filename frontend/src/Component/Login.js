@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Test = () => {
+const Login = () => {
   const nav = useNavigate();
   const [input, setInput] = useState({
     email: "",
@@ -96,4 +96,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Login;

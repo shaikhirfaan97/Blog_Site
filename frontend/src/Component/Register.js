@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import reg from "../assets/reg.jpg";
-const Test2 = () => {
+const Register = () => {
   const nav = useNavigate();
   const [input, setInput] = useState({
     username: "",
@@ -111,4 +111,4 @@ const Test2 = () => {
   );
 };
 
-export default Test2;
+export default Register;

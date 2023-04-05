@@ -16,6 +16,7 @@ const upload = multer({ storage: Storage });
 const router = express.Router();
 
 router.get("/get/allblog", Auth, blogController.getAllBlog);
+router.get("/get/commonblog", blogController.getAllUsersBlog);
 router.get("/get/blog/:id", Auth, blogController.getBlogById);
 router.post(
   "/add/blog",
@@ -23,5 +24,7 @@ router.post(
   Auth,
   blogController.addBlog
 );
+router.post("/delete/:id",blogController.deleteBlog)
+router.patch("/update/:id",blogController.updateBlog)
 
 module.exports = router;
