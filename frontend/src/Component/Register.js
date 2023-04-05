@@ -31,20 +31,20 @@ const Register = () => {
       }}
     >
       {/* <!-- Section: Design Block --> */}
-      <section class="container py-4 text-center text-lg-start opacity-75 ">
-        <div class="card mb-3 bg-light  text-dark bg-opacity-25">
-          <div class="row g-0 d-flex align-items-center">
-            <div class="col-lg-4 d-none d-lg-flex">
+      <section className="container py-4 text-center text-lg-start opacity-75 ">
+        <div className="card mb-3 bg-light  text-dark bg-opacity-25">
+          <div className="row g-0 d-flex align-items-center">
+            <div className="col-lg-4 d-none d-lg-flex">
               <img
                 src={reg}
                 alt="Trendy Pants and Shoes"
-                class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5"
+                className="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5"
               />
             </div>
-            <div class="col-lg-8">
-              <div class="card-body py-5 px-md-5">
+            <div className="col-lg-8">
+              <div className="card-body py-5 px-md-5">
                 <form onSubmit={handleRegister}>
-                  <div class="form-outline mb-4">
+                  <div className="form-outline mb-4">
                     <input
                       type="text"
                       name="username"
@@ -53,13 +53,13 @@ const Register = () => {
                         setInput({ ...input, [e.target.name]: e.target.value });
                       }}
                       id="username"
-                      class="form-control"
+                      className="form-control"
                     />
-                    <label class="form-label text-white" for="form1Example1">
+                    <label className="form-label text-white" for="form1Example1">
                       Full Name
                     </label>
                   </div>
-                  <div class="form-outline mb-4">
+                  <div className="form-outline mb-4">
                     <input
                       type="email"
                       name="email"
@@ -68,14 +68,14 @@ const Register = () => {
                         setInput({ ...input, [e.target.name]: e.target.value });
                       }}
                       id="form2Eemail"
-                      class="form-control"
+                      className="form-control"
                     />
-                    <label class="form-label text-white" for="form2Example1">
+                    <label className="form-label text-white" for="form2Example1">
                       Email address
                     </label>
                   </div>
 
-                  <div class="form-outline mb-4">
+                  <div className="form-outline mb-4">
                     <input
                       type="password"
                       name="password"
@@ -84,18 +84,18 @@ const Register = () => {
                         setInput({ ...input, [e.target.name]: e.target.value });
                       }}
                       id="form2Exs"
-                      class="form-control"
+                      className="form-control"
                     />
-                    <label class="form-label text-white" for="form2Example2">
+                    <label className="form-label text-white" for="form2Example2">
                       Password
                     </label>
                   </div>
 
-                  <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                  <button type="submit" className="btn btn-primary btn-block mb-4 ">
                     Sign Up
                   </button>
-                  <div class="row mb-4">
-                    <div class="col ">
+                  <div className="row mb-4">
+                    <div className="col ">
                       <Link className="text-white" to={"/login"}>
                         Already Have Account
                       </Link>

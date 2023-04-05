@@ -24,17 +24,17 @@ const SingleBlog = () => {
   return (
     <>
       <div className="container py-5 w-75">
-        <div class="card mb-3">
+        <div className="card mb-3">
           <img
             src={`http://localhost:9000/${blog.thumbnail}`}
-            class="card-img-top w-50 mx-auto"
+            className="card-img-top w-50 mx-auto"
             alt={blog.title}
           />
 
-          <div class="card-body">
+          <div className="card-body">
             <hr />
-            <h5 class="card-title text-center py-4">{blog.title}</h5>
-            <p class="card-text text-center py-4">{blog.description}</p>
+            <h5 className="card-title text-center py-4">{blog.title}</h5>
+            <p className="card-text text-center py-4">{blog.description}</p>
             <button className="btn btn-primary" onClick={() => navigate("/")}>
               Back to Post
             </button>

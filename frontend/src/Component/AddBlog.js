@@ -12,7 +12,7 @@ const AddBlog = () => {
   });
   const [file, setFile] = useState([]);
   const [selectCategory, setSelectCategory] = useState([]);
-  console.log(selectCategory);
+  // console.log(selectCategory);
 
   useEffect(() => {
     const fetchAllCategories = async () => {
@@ -53,7 +53,7 @@ const AddBlog = () => {
         }
       );
       alert(res.data.message);
-      console.log(res.data);
+      // console.log(res.data);
       navigate("/");
     } catch (error) {
       alert(error.response.data.message);
@@ -61,10 +61,10 @@ const AddBlog = () => {
   };
   return (
     <>
-      <div class="container py-4 text-center text-lg-start">
-        <h2 class="text-center my-3">Add New Blog</h2>
-        <form onSubmit={handleSubmit} class="py-5">
-          <div class="form-group form-floating mb-4">
+      <div className="container py-4 text-center text-lg-start">
+        <h2 className="text-center my-3">Add New Blog</h2>
+        <form onSubmit={handleSubmit} className="py-5">
+          <div className="form-group form-floating mb-4">
             <input
               type="text"
               id="form6Example3"
@@ -73,21 +73,21 @@ const AddBlog = () => {
               onChange={(e) => {
                 setInput({ ...input, [e.target.name]: e.target.value });
               }}
-              class="form-control"
+              className="form-control"
             />
-            <label class="form-label" for="form6Example3">
+            <label className="form-label" for="form6Example3">
               Title
             </label>
           </div>
 
-          <div class="form-group form-floating mb-4">
+          <div className="form-group form-floating mb-4">
             <select
               type="text"
               name="category"
               onChange={(e) => {
                 setInput({ ...input, [e.target.name]: e.target.value });
               }}
-              class="form-control"
+              className="form-control"
               id="exampleInputPassword1"
             >
               <option disabled selected></option>
@@ -99,14 +99,14 @@ const AddBlog = () => {
                 );
               })}
             </select>
-            <label class="form-label" for="exampleInputPassword1">
+            <label className="form-label" for="exampleInputPassword1">
               Category
             </label>
           </div>
 
-          <div class="form-group form-floating mb-4">
+          <div className="form-group form-floating mb-4">
             <textarea
-              class="form-control"
+              className="form-control"
               id="form6Example7"
               rows="8"
               name="description"
@@ -115,16 +115,16 @@ const AddBlog = () => {
                 setInput({ ...input, [e.target.name]: e.target.value });
               }}
             ></textarea>
-            <label class="form-label" for="form6Example7">
+            <label className="form-label" for="form6Example7">
               Additional Information
             </label>
           </div>
 
-          <div class="form-group form-floating mb-4">
-            <div class="input-group ">
+          <div className="form-group form-floating mb-4">
+            <div className="input-group ">
               <input
                 type="file"
-                class="form-control"
+                className="form-control"
                 name="thumbnail"
                 onChange={(e) => {
                   setFile(e.target.files[0]);
@@ -134,7 +134,7 @@ const AddBlog = () => {
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block mb-4">
+          <button type="submit" className="btn btn-primary btn-block mb-4">
             Post Your Blog
           </button>
         </form>
@@ -145,7 +145,7 @@ const AddBlog = () => {
     //   <div className="container py-4 text-center  text-lg-start">
     //   <h2 className="text-center my-3">Add New Blog</h2>
     //     <form onSubmit={handleSubmit} className="py-5">
-    //       <div class="form-outline mb-4">
+    //       <div className="form-outline mb-4">
     //         <input
     //           type="text"
     //           id="form6Example3"
@@ -154,14 +154,14 @@ const AddBlog = () => {
     //           onChange={(e) => {
     //             setInput({ ...input, [e.target.name]: e.target.value });
     //           }}
-    //           class="form-control"
+    //           className="form-control"
     //         />
-    //         <label class="form-label" for="form6Example3">
+    //         <label className="form-label" for="form6Example3">
     //           Title
     //         </label>
     //       </div>
 
-    //       <div class="form-outline mb-4">
+    //       <div className="form-outline mb-4">
     //         <input
     //           type="file"
     //           className="form-control"
@@ -171,12 +171,12 @@ const AddBlog = () => {
     //           }}
     //           id="inputGroupFile01"
     //         />
-    //         <label class="form-label" for="form6Example4">
+    //         <label className="form-label" for="form6Example4">
     //           Upload Image
     //         </label>
     //       </div>
 
-    //       <div class="form-outline mb-4">
+    //       <div className="form-outline mb-4">
     //         <select
     //           type="text"
     //           name="category"
@@ -195,14 +195,14 @@ const AddBlog = () => {
     //             );
     //           })}
     //         </select>
-    //         <label class="form-label" for="form6Example5">
+    //         <label className="form-label" for="form6Example5">
     //           Category
     //         </label>
     //       </div>
 
-    //       <div class="form-outline mb-4">
+    //       <div className="form-outline mb-4">
     //         <textarea
-    //           class="form-control"
+    //           className="form-control"
     //           id="form6Example7"
     //           rows="4"
     //           name="descritipon"
@@ -211,12 +211,12 @@ const AddBlog = () => {
     //             setInput({ ...input, [e.target.name]: e.target.value });
     //           }}
     //         ></textarea>
-    //         <label class="form-label" for="form6Example7">
+    //         <label className="form-label" for="form6Example7">
     //           Additional information
     //         </label>
     //       </div>
 
-    //       <button type="submit" class="btn btn-primary btn-block mb-4">
+    //       <button type="submit" className="btn btn-primary btn-block mb-4">
     //         Post Your Blog
     //       </button>
     //     </form>
